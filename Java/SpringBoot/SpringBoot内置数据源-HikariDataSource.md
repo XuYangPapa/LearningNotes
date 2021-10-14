@@ -62,6 +62,8 @@ public DataSource hikariCP
 
 但是，在SpringBoot的设计中DataSource是使用的**懒加载**的设计思想，也就是采用如上方法配置使用HikariCP，在项目启动时并不会真正完成数据库连接池的创建，只有在第一次调用了`getConnection`方法时才会去连接数据库创建连接池。这样的设计也是由于SpringBoot本身的必要组件就多，一些非必要组件选择懒加载的方式可以一定程度上的减少项目启动时间。但是这样的设计方式也会带来一个问题：如果数据源的配置有误，那么在项目启动时并不会第一时间暴露出来，项目投入运行后再发生数据库连接错误对生产运维较为麻烦。
 
+Issues地址：https://github.com/spring-projects/spring-boot/issues/19596
+
 
 
 ## 三、源码

@@ -69,6 +69,8 @@ docker stop containername
 docker rm containername
 # 查看容器详细信息
 docker inspect containername
+# 文件拷贝
+docker cp localpath container:containerpath
 ```
 
 ### 4. 容器管理-重要
